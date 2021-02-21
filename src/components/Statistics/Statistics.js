@@ -1,15 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styles from './Statistics.module.scss';
+
+const randomColor = () =>
+  '#' + (Math.random().toString(16) + '000000').substring(2, 8);
+
 
 const Statistics = ({ data, title }) => (
-    <section class="statistics">
-        {title && <h2 class="title">{title}</h2>}
-        <ul class="stat-list">
+    <section className={styles.statistics}>
+        {title && <h2 className={styles.title}>{title}</h2>}
+        <ul className={styles.statList}>
+            
             {data.map(({ id, label, percentage }) => (
-                <li class="item">
-                    <span class="label">{label}</span>
-                    <span class="percentage">{percentage}</span>
+                
+                <li style={{ backgroundColor: randomColor() }} className={styles.item}>
+                    <span className={styles.label}>{label}</span>
+                    <span className={styles.percentage}>{percentage}</span>
                 </li>
             ))}
         </ul>
