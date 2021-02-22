@@ -14,7 +14,7 @@ const Statistics = ({ data, title }) => (
             
             {data.map(({ id, label, percentage }) => (
                 
-                <li style={{ backgroundColor: randomColor() }} className={styles.item}>
+                <li key={id} style={{ backgroundColor: randomColor() }} className={styles.item}>
                     <span className={styles.label}>{label}</span>
                     <span className={styles.percentage}>{percentage}</span>
                 </li>
